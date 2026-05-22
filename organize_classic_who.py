@@ -116,7 +116,7 @@ def _plan_serial(entry: dict) -> list:
     elif entry["episode_source"] == "tv_movie":
         avs = [f for f in TV_MOVIE_DIR.iterdir() if f.suffix == ".avi"]
         if avs:
-            s, e, title, _ = entry["episodes"][0]
+            _, _, title, _ = entry["episodes"][0]
             dest = MOVIE_DEST / title / f"{title}.avi"
             moves.append((avs[0], dest))
 
